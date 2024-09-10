@@ -1,0 +1,2 @@
+nohup: ignoring input
+Namespace(batch_size=4, block_name='CABlock', datasets=['megc2019cd'], fast_dev_run=False, frames_mode=1, num_classes=[0], only_use_long_action=False, only_use_short_action=True, remark='in-cd-short-framesmode=1', rgb_diff_abs=False, sampling_strategy=3, use_class_weight=False, use_feature_concat=False, use_feature_conv=False, use_gap=False, use_natural_face=True, use_offline_aug=False, use_pos_vit=False, use_swin_CA=True, weight_decay=1e-08)

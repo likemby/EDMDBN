@@ -1,0 +1,2 @@
+nohup: ignoring input
+Namespace(all_sample_annotation_path=None, batch_size=4, block_name='CABlock', datasets=['samm'], debug=False, fast_dev_run=False, frames_mode=0, num_classes=[5], remark='fusenet-in-samm-CA_classweight-featureconcat', rgb_diff_abs=False, sampling_strategy=3, use_class_weight=True, use_feature_concat=True, use_feature_conv=False, use_gap=False, use_natural_face=True, use_offline_aug=False, use_pos_vit=False, use_swin_CA=True, weight_decay=1e-08)

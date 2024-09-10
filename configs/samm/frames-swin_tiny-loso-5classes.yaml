@@ -1,0 +1,71 @@
+# Global seed
+seed: 42
+log_dir_name: 'frames-swin_tiny-loso-5classes'
+
+################################ Dataset and Dataloader parameters
+# 指定标注文件和数据集路径
+dataset_name: samm
+data_root: /home/mby/computer_vision/database/SAMM/aligned_dlib_crop_twice
+annotation_path: /home/mby/computer_vision/database/SAMM/unique_path_data_annotations/5classes-loso-annotations
+
+# 控制统一帧数量和大小
+input_size: 224
+num_frames: 16
+
+# 控制帧采样方式和插值策略
+# 0-all frames, 1-apex_frame, 2-onset,apex frames, 3-onset,apex,offsetframes, 4-frames_perseqment
+sampling_strategy: 3
+num_segments: 16 # for sampling_strategy 4
+frames_per_segment: 1 # for sampling_strategy 4
+interpolation_strategy: FixSequenceInterpolation
+
+# dataloader 参数
+batch_size: 4
+num_workers: 56
+pin_mem: true
+
+# 其它参数
+optical_flow: False
+use_weighted_sampler: False
+use_class_weight: True
+use_offline_aug: False
+all_sample_annotation_path: /home/mby/computer_vision/database/SAMM/unique_path_data_annotations/5classes-all_samples.txt
+################################ End
+
+################################ Model parameters
+# Model parameters
+model: 'swin_tiny' # Name of model to train
+num_classes: 5
+drop_path: 0.1 
+window_size: [8,7,7]
+use_2dpretrained: True
+cls_head: 'linear' # ['vit_gap','vit_cls','resnet_gap']
+
+# loss
+cls_loss: 'ce' # ['focal', 'ce']
+
+# optimizer
+lr: 1.e-4
+min_lr: 1.e-6
+warmup_epochs: 10 
+weight_decay: 1.e-8
+opt_betas: [0.9, 0.999]
+layer_decay: 0.1 # (0,1.] 1. for no layer_decay
+
+################################ End
+
+################################ Pytorch lighting Trainer
+# trainer args
+default_root_dir: ''
+max_epochs: 60
+precision: 16
+devices: [0]
+accelerator: 'gpu'
+benchmark: True
+accumulate_grad_batches: 1
+# track_grad_norm: 2 # -1 means don't track
+# gradient_clip_algorithm: 'norm'
+# gradient_clip_val: 1. # 0 means don’t clip.
+# deterministic: True # avg_pool3d_backward_cuda does not have a deterministic implementation,
+log_every_n_steps: 5
+################################ End

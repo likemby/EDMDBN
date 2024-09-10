@@ -1,0 +1,2 @@
+nohup: ignoring input
+Namespace(batch_size=4, datasets=['samm'], fast_dev_run=False, frames_mode=1, num_classes=[5, 3], remark='short-in-classweight-framesmode=1', sampling_strategy=3, use_class_weight=True, use_gap=False, use_natural_face=True, use_offline_aug=False, use_pos_vit=False, use_swin_CA=True)
