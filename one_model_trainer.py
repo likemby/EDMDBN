@@ -437,10 +437,10 @@ def main(args):
 
     # 结束训练，发送邮件通知
     send_email(
-        addr_from='2101768@stu.neu.edu.cn',  # 发送方邮箱
-        authorization_code="Ma990123@",
-        addr_to='418055608@qq.com',  # 接收方邮箱
-        smtp_server='smtp.stu.neu.edu.cn',
+        addr_from='xxxxxxxxxx',  # 发送方邮箱
+        authorization_code="xxxxxx",
+        addr_to='xxxxxx',  # 接收方邮箱
+        smtp_server='xxxxx',
         head_from='我的程序',
         head_to='本人',
         head_subject='程序结束提醒',
